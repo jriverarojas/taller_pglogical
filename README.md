@@ -139,7 +139,7 @@ select pglogical.create_replication_set('replicacion');
 select pglogical.replication_set_add_table('replicacion','public.tprueba', true);
 ```
 
-Ejecutar en pgadmin como consulta en la bd master puerto 5433:
+Ejecutar en pgadmin como consulta en la bd slave puerto 5433:
 ```
 SELECT pglogical.create_node(
     node_name := 'slave',
