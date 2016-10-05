@@ -17,11 +17,11 @@ yum -y install postgresql95-server postgresql95-docs postgresql95-contrib postgr
 ```
 Cambiar en archivo de configuracion /var/lib/pgsql/9.4/data/postgresql.conf :
 ```
-listen_address    *
+listen_address    '*'
 ```
 Cambiar en archivo de configuracion /var/lib/pgsql/9.5/data/postgresql.conf :
 ```
-listen_address    *
+listen_address    '*'
 port              5433
 ```
 Adicionar el rango de la red local en el archivo /var/lib/pgsql/9.4/data/pg_hba.conf . Ejemplo:
