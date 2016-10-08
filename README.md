@@ -81,6 +81,20 @@ yum -y install http://packages.2ndquadrant.com/pglogical/yum-repo-rpms/pglogical
 yum -y install postgresql95-pglogical
 yum -y install postgresql94-pglogical
 ```
+En Ubuntu server
+Crear archivo /etc/apt/sources.list.d/2ndquadrant.list con el siguiente contenido:
+```
+deb [arch=amd64] http://packages.2ndquadrant.com/pglogical/apt/ trusty-2ndquadrant main
+```
+
+Ejecutar:
+
+```
+wget --quiet -O - http://packages.2ndquadrant.com/pglogical/apt/AA7A6805.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql-9.5-pglogical
+```
+
 # 3. Configurando postgresql.conf y pg_hba.conf
 Cambiar en archivo de configuracion /var/lib/pgsql/9.4/data/postgresql.conf :
 ```
