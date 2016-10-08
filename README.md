@@ -96,7 +96,7 @@ sudo apt-get install postgresql-9.5-pglogical
 ```
 
 # 3. Configurando postgresql.conf y pg_hba.conf
-Cambiar en archivo de configuracion /var/lib/pgsql/9.4/data/postgresql.conf :
+Cambiar en archivo de configuracion /var/lib/pgsql/9.4/data/postgresql.conf (/etc/postgresql/9.5/main/postgresql.conf) :
 ```
 wal_level                 logical 
 max_worker_processes      10 
@@ -105,25 +105,25 @@ max_wal_senders           10
 shared_preload_libraries  'pglogical'
 ```
 
-Cambiar en archivo de configuracion /var/lib/pgsql/9.5/data/postgresql.conf :
+Cambiar en archivo de configuracion /var/lib/pgsql/9.5/data/postgresql.conf (/etc/postgresql/9.5/main/postgresql.conf):
 ```
 wal_level                 logical 
 max_worker_processes      10 
 max_replication_slots     10 
 shared_preload_libraries  'pglogical'
 ```
-Adicionar el rango de la red local en el archivo /var/lib/pgsql/9.4/data/pg_hba.conf . Ejemplo:
+Adicionar el rango de la red local en el archivo /var/lib/pgsql/9.4/data/pg_hba.conf(/etc/postgresql/9.5/main/pg_hba.conf) . Ejemplo:
 ```
 host    replication		replication     	192.168.56.0/24         md5
 ```
-Adicionar el rango de la red local en el archivo /var/lib/pgsql/9.5/data/pg_hba.conf . Ejemplo:
+Adicionar el rango de la red local en el archivo /var/lib/pgsql/9.5/data/pg_hba.conf(/etc/postgresql/9.5/main/pg_hba.conf) . Ejemplo:
 ```
 host    replication		replication     	192.168.56.0/24         md5
 ```
 Aplicando cambios en archivos de configuracion. Ejecutar:
 ```
-systemctl restart postgresql-9.4
-systemctl restart postgresql-9.5
+systemctl restart postgresql-9.4 (/etc/init.d/postgresql restart)
+systemctl restart postgresql-9.5 (/etc/init.d/postgresql restart)
 ```
 
 # 4. Creando extensiones
