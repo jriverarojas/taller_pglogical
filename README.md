@@ -103,6 +103,7 @@ max_worker_processes      10
 max_replication_slots     10 
 max_wal_senders           10 
 shared_preload_libraries  'pglogical'
+wal_sender_timeout        0  #Esto hara que despues de un corte la replicacion siga funcionando normalmente
 ```
 
 Cambiar en archivo de configuracion /var/lib/pgsql/9.5/data/postgresql.conf (/etc/postgresql/9.5/main/postgresql.conf):
